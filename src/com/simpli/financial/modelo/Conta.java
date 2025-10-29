@@ -1,3 +1,4 @@
+package com.simpli.financial.modelo;
 import java.util.Objects;
 
 public class Conta {
@@ -36,7 +37,7 @@ public class Conta {
     }
 
 
-    Conta (Pessoa titular, int agencia, int numero, double saldo) {
+    public Conta (Pessoa titular, int agencia, int numero, double saldo) {
         Objects.requireNonNull(titular); // Isso é praticamente um if!!! Ótima pratica
         this.titular = titular;
         this.agencia = agencia;
@@ -44,16 +45,16 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    Conta () {}
+    public Conta () {}
 
-    void depositar(double valor){
+    public void depositar(double valor){
 
         if(valor <= 0){
             throw new IllegalArgumentException("Valor deve ser maior que zero");
         }
         saldo += valor;
     }
-    void sacar(double valor) {
+    public void sacar(double valor) {
         if(valor <= 0){
             throw new IllegalArgumentException("Valor deve ser maior que zero");
         }
@@ -64,7 +65,7 @@ public class Conta {
         saldo -= valor;
     }
 
-    void sacar (double valor, double taxaSaque) {
+    public void sacar(double valor, double taxaSaque) {
         sacar(valor + taxaSaque);
 
     }
