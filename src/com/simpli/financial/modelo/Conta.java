@@ -37,12 +37,11 @@ public class Conta {
     }
 
 
-    public Conta (Pessoa titular, int agencia, int numero, double saldo) {
+    public Conta (Pessoa titular, int agencia, int numero) {
         Objects.requireNonNull(titular); // Isso é praticamente um if!!! Ótima pratica
         this.titular = titular;
         this.agencia = agencia;
         this.numero = numero;
-        this.saldo = saldo;
     }
 
     public Conta () {}
@@ -59,7 +58,7 @@ public class Conta {
             throw new IllegalArgumentException("Valor deve ser maior que zero");
         }
 
-        if(saldo - valor < 0) {
+        if(getSaldoDisponivel() - valor < 0) {
             throw new IllegalStateException("Saldo insuficiente");
         } ;
         saldo -= valor;
@@ -68,5 +67,9 @@ public class Conta {
     public void sacar(double valor, double taxaSaque) {
         sacar(valor + taxaSaque);
 
+    }
+
+    public double getSaldoDisponivel() {
+        return getSaldo();
     }
 }
