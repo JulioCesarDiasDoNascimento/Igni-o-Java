@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/IgnicaoJava.iml" filepath="$PROJECT_DIR$/IgnicaoJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/financial.iml" filepath="$PROJECT_DIR$/financial.iml" />
     </modules>
   </component>
 </project>
