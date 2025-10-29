@@ -2,16 +2,46 @@ import java.util.Objects;
 
 public class Conta {
 
-    Pessoa titular; // Se chama relação tem um Ex: Conta tem um Pessoa
-    int agencia;
-    int numero;
-    double saldo;
+    private Pessoa titular; // Se chama relação tem um Ex: Conta tem um Pessoa
+    private int agencia;
+    private int numero;
+    private double saldo;
 
-    Conta (Pessoa titular, int agencia, int numero) {
+    public Pessoa getTitular() {
+        return titular;
+    }
+
+    public void setTitular(Pessoa titular) {
+        this.titular = titular;
+    }
+
+    public int getAgencia() {
+        return agencia;
+    }
+
+    public void setAgencia(int agencia) {
+        this.agencia = agencia;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+
+    Conta (Pessoa titular, int agencia, int numero, double saldo) {
         Objects.requireNonNull(titular); // Isso é praticamente um if!!! Ótima pratica
         this.titular = titular;
         this.agencia = agencia;
         this.numero = numero;
+        this.saldo = saldo;
     }
 
     Conta () {}

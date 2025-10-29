@@ -11,24 +11,22 @@ public class Principal {
         voce.documento = "987.654.321-00";
 
         //Estou criando um novo objeto com o molde da classe conta
-        Conta minhaConta = new Conta(eu, 6520, 17587);
+        Conta minhaConta = new Conta(eu, 6520, 17587,15000.d);
 
-        minhaConta.saldo = 15000.0d;
         minhaConta.depositar(1000.0d);
         minhaConta.sacar(5000.0d, 10);
-        System.out.println("Titular: " + minhaConta.titular.nome);
-        System.out.println("Saldo: " + minhaConta.saldo);
+        System.out.println("Titular: " + minhaConta.getTitular().nome);
+        System.out.println("Saldo: " + minhaConta.getSaldo());
 
 
         Conta suaConta = new Conta();
-        suaConta.titular = voce;
-        suaConta.agencia = 6250;
-        suaConta.numero = 17853;
-        suaConta.saldo = 3000.0d;
+        suaConta.setTitular(voce);
+        suaConta.setAgencia(6250);
+        suaConta.setNumero(17853);
         suaConta.depositar(1000.0d);
-        suaConta.sacar(4000.0d);
-        System.out.println("Titular: " + suaConta.titular.nome);
-        System.out.println("Saldo: " + suaConta.saldo);
+        suaConta.sacar(200.0d);
+        System.out.println("Titular: " + suaConta.getTitular().nome);
+        System.out.println("Saldo: " + suaConta.getSaldo());
 
         // fiz dois objetos baseado no mesmo molde(SÂO OBJETOS DIFERENTES)
 
