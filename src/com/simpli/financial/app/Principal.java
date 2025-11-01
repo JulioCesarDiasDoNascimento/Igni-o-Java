@@ -21,12 +21,14 @@ public class Principal {
         minhaConta.depositar(1000.0d);
         minhaConta.sacar(500.0d, 10);
         minhaConta.creditarRendimentos(0.8d);
+        minhaConta.debitarTarifa();
         caixa.imprimirSaldo(minhaConta);
 
 
         ContaEspecial suaConta = new ContaEspecial(voce,6250,62814,1000.0d);
         suaConta.depositar(1000.0d);
         suaConta.sacar(1500.0);
+        minhaConta.debitarTarifa();
         caixa.imprimirSaldo(suaConta);
 
         // Fiz dois objetos baseado no mesmo molde(SÂO OBJETOS DIFERENTES)

@@ -1,7 +1,9 @@
 package com.simpli.financial.modelo;
 import java.util.Objects;
 
-public class Conta {
+public abstract class Conta {
+    // deixando como um molde
+    // não é mais posivel criar uma instância dessa classe
 
     private Pessoa titular; // Se chama relação tem um Ex: Conta tem um Pessoa
     private int agencia;
@@ -72,4 +74,5 @@ public class Conta {
     public double getSaldoDisponivel() {
         return getSaldo();
     }
+    public abstract void debitarTarifa();
 }

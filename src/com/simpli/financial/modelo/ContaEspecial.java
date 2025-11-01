@@ -21,4 +21,11 @@ public class ContaEspecial extends Conta{
     public double getSaldoDisponivel() {
         return super.getSaldoDisponivel() + getValorLimite();
     }
+
+    @Override
+    public void debitarTarifa() {
+        if(getSaldo() < 10000.0d){
+            sacar(30);
+        }
+    }
 }
