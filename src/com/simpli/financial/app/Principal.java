@@ -28,7 +28,7 @@ public class Principal {
         ContaEspecial suaConta = new ContaEspecial(voce,6250,62814,1000.0d);
         suaConta.depositar(1000.0d);
         suaConta.sacar(1500.0);
-        minhaConta.debitarTarifa();
+                suaConta.debitarTarifa();
         caixa.imprimirSaldo(suaConta);
 
         // Fiz dois objetos baseado no mesmo molde(SÂO OBJETOS DIFERENTES)
