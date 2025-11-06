@@ -1,10 +1,9 @@
 package com.simpli.financial.app;
 
 import com.simpli.financial.atm.CaixaEletronico;
+import com.simpli.financial.excecao.SaldoInsuficienteException;
 import com.simpli.financial.modelo.*;
 import com.simpli.financial.pagemento.Boleto;
-import com.simpli.financial.pagemento.DocumentoEstonarvel;
-import com.simpli.financial.pagemento.DocumentoPagavel;
 import com.simpli.financial.pagemento.Holerite;
 
 public class Principal {
@@ -22,32 +21,26 @@ public class Principal {
         CaixaEletronico caixa = new CaixaEletronico();
         //Estou a criar um objeto com o molde da classe conta
         ContaInvestimento minhaConta = new ContaInvestimento(eu, 6520, 17587);
+        try {
 
-        minhaConta.depositar(20000.0d);
-        minhaConta.sacar(100.0d, 10);
-        minhaConta.creditarRendimentos(0.10d);
-        minhaConta.debitarTarifa();
 
-        Holerite salarioFuncionario = new Holerite(eu,10, 100.0f);
-        Boleto boletoEscola = new Boleto(eu, 100.0d);
+            minhaConta.depositar(20000.0d);
+            minhaConta.sacar(30000.0d, 10);
+            minhaConta.creditarRendimentos(0.10d);
+            minhaConta.debitarTarifa();
 
-        caixa.pagar(boletoEscola, minhaConta);
-        caixa.pagar(salarioFuncionario, minhaConta);
-        caixa.estornarPagamento(boletoEscola, minhaConta);
-        boletoEscola.boletoPago();
-        boletoEscola.imprimirRecibo();
-        salarioFuncionario.imprimirRecibo();
+            Holerite salarioFuncionario = new Holerite(eu, 10, 100.0f);
+            Boleto boletoEscola = new Boleto(eu, 100.0d);
 
+            caixa.pagar(boletoEscola, minhaConta);
+            caixa.pagar(salarioFuncionario, minhaConta);
+            caixa.estornarPagamento(boletoEscola, minhaConta);
+            boletoEscola.boletoPago();
+            boletoEscola.imprimirRecibo();
+            salarioFuncionario.imprimirRecibo();
+        }catch (SaldoInsuficienteException e){
+            System.out.println("Erro ao executar operação na conta: " + e.getMessage());
+        }
         caixa.imprimirSaldo(minhaConta);
-
-
-//        ContaEspecial suaConta = new ContaEspecial(voce,6250,62814,1000.0d);
-//        suaConta.depositar(1000.0d);
-//        suaConta.sacar(1500.0);
-//        suaConta.debitarTarifa();
-//        caixa.imprimirSaldo(suaConta);
-
-        // Fiz dois objetos baseado no mesmo molde(SÂO OBJETOS DIFERENTES)
-
     }
 }

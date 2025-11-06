@@ -1,9 +1,11 @@
 package com.simpli.financial.modelo;
+import com.simpli.financial.excecao.SaldoInsuficienteException;
+
 import java.util.Objects;
 
 public abstract class Conta {
-    // deixando como um molde
-    // não é mais posivel criar uma instância dessa classe
+    // Deixando como um molde
+    // Não é mais possível criar uma instância dessa classe
 
     private Pessoa titular; // Se chama relação tem um Ex: Conta tem um Pessoa
     private int agencia;
@@ -61,8 +63,8 @@ public abstract class Conta {
         }
 
         if(getSaldoDisponivel() - valor < 0) {
-            throw new IllegalStateException("Saldo insuficiente");
-        } ;
+            throw new SaldoInsuficienteException("Saldo insuficiente");
+        }
         saldo -= valor;
     }
 
