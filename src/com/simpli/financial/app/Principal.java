@@ -1,10 +1,10 @@
 package com.simpli.financial.app;
 
-import com.simpli.financial.atm.CaixaEletronico;
-import com.simpli.financial.excecao.SaldoInsuficienteException;
+import com.simpli.financial.modelo.atm.CaixaEletronico;
+import com.simpli.financial.modelo.excecao.SaldoInsuficienteException;
 import com.simpli.financial.modelo.*;
-import com.simpli.financial.pagemento.Boleto;
-import com.simpli.financial.pagemento.Holerite;
+import com.simpli.financial.modelo.pagemento.Boleto;
+import com.simpli.financial.modelo.pagemento.Holerite;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

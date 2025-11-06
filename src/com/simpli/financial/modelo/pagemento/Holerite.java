@@ -1,4 +1,4 @@
-package com.simpli.financial.pagemento;
+package com.simpli.financial.modelo.pagemento;
 
 import com.simpli.financial.modelo.Pessoa;
 

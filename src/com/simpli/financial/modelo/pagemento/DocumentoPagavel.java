@@ -1,4 +1,4 @@
-package com.simpli.financial.pagemento;
+package com.simpli.financial.modelo.pagemento;
 
 import java.math.BigDecimal;
 

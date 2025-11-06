@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class PrincipalSecundario {
+public class PrincipalHomologacao {
     public static void main(String[] args) {
         Pessoa eu = new Pessoa("Júlio César", "118.449.555-55");
         Pessoa voce = new Pessoa("Giovanna", "987.654.321-00");

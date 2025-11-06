@@ -1,4 +1,4 @@
-package com.simpli.financial.excecao;
+package com.simpli.financial.modelo.excecao;
 
 public class SaldoInsuficienteException extends RuntimeException {
 

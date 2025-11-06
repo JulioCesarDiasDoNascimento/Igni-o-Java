@@ -1,5 +1,5 @@
 package com.simpli.financial.modelo;
-import com.simpli.financial.excecao.SaldoInsuficienteException;
+import com.simpli.financial.modelo.excecao.SaldoInsuficienteException;
 
 import java.math.BigDecimal;
 import java.util.Objects;

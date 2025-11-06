@@ -1,8 +1,8 @@
-package com.simpli.financial.atm;
+package com.simpli.financial.modelo.atm;
 
 import com.simpli.financial.modelo.Conta;
-import com.simpli.financial.pagemento.DocumentoEstonarvel;
-import com.simpli.financial.pagemento.DocumentoPagavel;
+import com.simpli.financial.modelo.pagemento.DocumentoEstonarvel;
+import com.simpli.financial.modelo.pagemento.DocumentoPagavel;
 
 public class CaixaEletronico {
 
