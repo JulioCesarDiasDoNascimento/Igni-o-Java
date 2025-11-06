@@ -2,10 +2,12 @@ package com.simpli.financial.pagemento;
 
 import com.simpli.financial.modelo.Pessoa;
 
+import java.math.BigDecimal;
+
 public class Holerite implements DocumentoPagavel{
 
     private Pessoa funcionario;
-    private double valorHora;
+    private BigDecimal valorHora;
     private int quantidadeHoras;
     private boolean pago;
 
@@ -17,11 +19,11 @@ public class Holerite implements DocumentoPagavel{
         this.funcionario = funcionario;
     }
 
-    public double getValorHora() {
+    public BigDecimal getValorHora() {
         return valorHora;
     }
 
-    public void setValorHora(double valorHora) {
+    public void setValorHora(BigDecimal valorHora) {
         this.valorHora = valorHora;
     }
 
@@ -41,15 +43,15 @@ public class Holerite implements DocumentoPagavel{
         this.quantidadeHoras = quantidadeHoras;
     }
 
-    public Holerite(Pessoa funcionario, int quantidadeHoras, double valorHora) {
+    public Holerite(Pessoa funcionario, int quantidadeHoras, BigDecimal valorHora) {
         this.funcionario = funcionario;
         this.quantidadeHoras = quantidadeHoras;
         this.valorHora = valorHora;
     }
 
     @Override
-    public double getValorTotal() {
-        return valorHora * quantidadeHoras ;
+    public BigDecimal getValorTotal() {
+        return valorHora.multiply(new BigDecimal(quantidadeHoras));
     }
 
     @Override

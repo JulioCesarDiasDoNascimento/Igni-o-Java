@@ -1,8 +1,10 @@
 package com.simpli.financial.pagemento;
 
+import java.math.BigDecimal;
+
 public interface DocumentoPagavel {
 
-    double getValorTotal();
+    BigDecimal getValorTotal();
     boolean estaPago();
     void quitarPagamento();
      default void imprimirRecibo() {
