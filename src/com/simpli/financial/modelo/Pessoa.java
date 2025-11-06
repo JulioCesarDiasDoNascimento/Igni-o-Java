@@ -2,6 +2,7 @@ package com.simpli.financial.modelo;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Pessoa {
 
@@ -9,6 +10,12 @@ public class Pessoa {
     private String documento;
     private BigDecimal rendimentoAnual;
 
+    public Pessoa() {
+    }
+    public Pessoa(String nome, String documento) {
+        this.nome = nome;
+        this.documento = documento;
+    }
 
     public LocalDateTime getDataUltimaAtualizacao() {
         return dataUltimaAtualizacao;
@@ -51,5 +58,28 @@ public class Pessoa {
 
     public void setDocumento(String documento) {
         this.documento = documento;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "nome=" + nome +
+                ", documento='" + documento + '\'' +
+                ", tipo='" + tipo + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) return true;
+        if(obj == null) return false;
+        if(this.getClass() != obj.getClass()) return false;
+
+        Pessoa pessoa = (Pessoa) obj;
+        return documento.equals(((Pessoa) obj).documento);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(documento);
     }
 }

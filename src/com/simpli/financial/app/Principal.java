@@ -23,7 +23,7 @@ public class Principal {
         System.out.println(eu.getDataUltimaAtualizacao());
 
         Pessoa voce = new Pessoa();
-        voce.setNome("Giovanna Penteado");
+        voce.setNome("Giovanna");
         voce.setDocumento("987.654.321-00");
         voce.setRendimentoAnual(new BigDecimal(100000.0d));
 

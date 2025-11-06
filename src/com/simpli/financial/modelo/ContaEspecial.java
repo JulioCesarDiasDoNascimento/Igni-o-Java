@@ -1,6 +1,7 @@
 package com.simpli.financial.modelo;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class ContaEspecial extends Conta{
 
